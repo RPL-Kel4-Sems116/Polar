@@ -11,7 +11,7 @@ class orderForm(ModelForm):
     class Meta:
         model = Customer
         fields = [
-            'full_name',
+            'description',
             'email',
             'phone_number',
             'services',
@@ -19,7 +19,7 @@ class orderForm(ModelForm):
 
         
         widgets = {
-            'full_name':forms.TextInput(attrs={'class': 'form-control'}),
+            'description':forms.Textarea(attrs={'class': 'form-control'}),
             'email':forms.TextInput(attrs={'class': 'form-control'}),
             'phone_number':forms.TextInput(attrs={'class': 'form-control'}),
             'services':forms.Select(attrs={'class': 'form-control'}),
@@ -29,11 +29,11 @@ class searchForm(ModelForm):
     class Meta:
         model = Customer
         fields = [
-            'full_name',
+            'description',
         ]
 
         widgets = {
-            'full_name':forms.TextInput(attrs={'placeholder': 'Search by fullname',
+            'description':forms.TextInput(attrs={'placeholder': 'description',
                                                 'class' : 'form-control'}),
         }
 

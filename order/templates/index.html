@@ -14,6 +14,8 @@
           </div>
           <div class="col-6" style="margin-top: 6rem">
             <h2 id="tebal" style="color:white; text-align:right">WE SOLVE CHALLENGES IN UNCONVENTIONAL WAY FOR YOUR BUSINESS</h2>
+            <h2 id="tebal" style="color:white; text-align:right">{{gambar.id}}</h2>
+            
           </div>
           
         </div>
@@ -59,22 +61,13 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <div class="owl-carousel owl-theme text-center">
+              {% for i in gambar %}
               <div class="item">
                 <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/Dshowcase/aquarium.png' %} alt="Gambar" />
+                  <img class="img-owl" src={{i.gambar}} alt="Gambar" />
                 </div>
               </div>
-              <div class="item">
-                <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/Dshowcase/Japan.jpg' %} alt="Gambar" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/Dshowcase/Poster_RR.png' %} alt="Gambar" />
-                </div>
-              </div>
-            </div>
+              {% endfor %}
           </div>
           <div class="col-md-1"></div>
         </div>
@@ -90,36 +83,13 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <div class="owl-carousel owl-theme">
+              {% for i in gambar2 %}
               <div class="item">
                 <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/Pshowcase/jepun.jpg' %} alt="Gambar" />
+                  <img class="img-owl" src={{i.gambar2}} alt="Gambar" />
                 </div>
               </div>
-              <div class="item">
-                <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/Pshowcase/jepun2.jpg' %} alt="Gambar" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/Pshowcase/jepun3.jpg' %} alt="Gambar" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/Pshowcase/jepun4.jpg' %} alt="Gambar" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/Pshowcase/jepun5.jpg' %} alt="Gambar" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/Pshowcase/bunga.jpg' %} alt="Gambar" />
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
           <div class="col-md-1"></div>
@@ -136,21 +106,13 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <div class="owl-carousel owl-theme">
+              {% for i in gambar3 %}
               <div class="item">
                 <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/logo.png' %} alt="Gambar" />
+                  <img class="img-owl" src={{i.gambar3}} alt="Gambar" />
                 </div>
               </div>
-              <div class="item">
-                <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/logo.png' %} alt="Gambar" />
-                </div>
-              </div>
-              <div class="item">
-                <div class="card border-0">
-                  <img class="img-owl" src={% static 'assets/logo.png' %} alt="Gambar" />
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
           <div class="col-md-1"></div>

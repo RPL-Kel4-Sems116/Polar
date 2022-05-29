@@ -10,11 +10,6 @@
                 <form style="padding-left:4rem; padding-right:4rem" action="" method="post">
                     {% csrf_token %}
                     
-                    <div class="form-group">
-                        <label for="exampleInputEmail" style="color:white;">Full Name</label>
-                        <br>
-                        {{form.full_name}}
-                    </div>
                     <div class="form-group" style="margin-top: 1rem">
                         <label for="exampleInputEmail" style="color:white;">Email address</label><br>
                         {{form.email}}
@@ -27,11 +22,17 @@
                     </div>
                     <label for="exampleInputPhone" style="color:white; margin-top: 1rem">Services</label><br>
                     {{form.services}}<br>
+                    <div class="form-group" style="margin-top: 1rem">
+                      <label for="exampleInputEmail" style="color:white;">Description</label><br>
+                      {{form.description}}
+                      <small id="emailHelp" class="form-text text-muted">Max 200 Char</small>
+                    </div>
                     <div class="row">
                         <div class="col text-center">
                             <button type="submit" class="btn btn-light" style="margin-top: 1rem; border-radius:20px;">ORDER NOW!</button>
                         </div>
                     </div>
+                    
                     
                 </form>
             </div>

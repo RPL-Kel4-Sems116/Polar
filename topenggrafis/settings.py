@@ -131,6 +131,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+MEDIA_ROOT = ''
+MEDIA_URL = ''
 
 
 # Default primary key field type

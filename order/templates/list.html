@@ -15,8 +15,8 @@
                     <div class="text-center col-sm-4"> 
                         <form method='POST' action='' class="center">
                             {% csrf_token %}
-                            {{form.full_name}}
-                            <input type="submit" value='Search'/>
+                            {{form.description}}
+                            <input type="submit" value='Search' name='q'/>
                         </form>
                     </div>
                     <div class="text-center col-sm-4"></div> 
@@ -25,14 +25,16 @@
                 <table class="table table-bordered text-center" style="color: white; border-radius:15px;">
                     <tr>
                         <th scope="col">Customer ID</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">User</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Services</th>
+                        <th scope="col">Status</th>
                     </tr>
                     {% for item in cust %}
                     <tr> 
                         <td>{{ item.id }}</td>
-                        <td>{{ item.full_name }}</td>
+                        <td>{{ item.description }}</td>
                         <td>{{ item.services }}</td>
+                        <td>{{ item.status }}</td>
                     </tr>
                     {% endfor %}
                 </table>

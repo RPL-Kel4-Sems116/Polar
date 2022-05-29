@@ -1,4 +1,6 @@
 from contextlib import redirect_stderr
+from urllib.robotparser import RequestRate
+from django.http import Http404
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -9,7 +11,7 @@ from django.contrib.auth.models import User
 
 
 from .forms import orderForm, searchForm, UserCreateForm
-from .models import Customer
+from .models import Customer, Gambar, Gambar2, Gambar3
 
 # Create your views here.
 def home(request):
@@ -31,14 +33,14 @@ def register(request):
 
 
 def list(request):
-    cust = Customer.objects.all()
+    cust = Customer.objects.filter(user_name = request.user)
     form = searchForm(request.POST or None)
     context = {
             "form": form,
             "cust": cust,
         }
     if request.method == "POST": 
-        cust = Customer.objects.filter(full_name__icontains=form['full_name'].value(),
+        cust = Customer.objects.filter(description__icontains=form['description'].value(),
                                             )
         context = {
             "form": form,
@@ -61,3 +63,17 @@ def order(request):
 
     return render(request, 'order.html', {'form': form})
 
+def gambar(request, gambar_id):
+    gambar = Gambar.objects.get(pk=gambar_id)
+    if gambar is not None:
+        return render(request, 'index.html', {'gambar':gambar})
+    else:
+        raise Http404('Gambarnya gaada')
+
+def home2(request):
+    gambar = Gambar.objects.all()
+    gambar2 = Gambar2.objects.all()
+    gambar3 = Gambar3.objects.all()
+    
+    return render(request, 'index.html', {'gambar':gambar, 'gambar2':gambar2, 'gambar3':gambar3})
+    
